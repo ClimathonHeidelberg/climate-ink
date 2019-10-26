@@ -27,11 +27,11 @@ class Ecosystem():
     def current_CO2_concentration(self):
         years_diff = int(self.year) - 1970
         print(years_diff)
-        return 326.675+1.48262*(years_diff**(2.3))
+        return 326.675+1.48262*((years_diff/10)**(2.3))
 
     def infinitesimal_CO2_output(self):
         years_diff = int(self.year) - 1970
-        return 3.41*years_diff**(1.3)
+        return 3.41*(years_diff/10)**(1.3)
 
     def temp_from_currentCO2(self):
         temp_increase_from_preindustrial_lvls=4*0.3*5.35*np.log(self.co2_concentration/278)
@@ -40,6 +40,7 @@ class Ecosystem():
     def update_co2(self):
         #per year
         self.co2_concentration += self.infinitesimal_CO2_output()
+
 
 class Catastrophy():
     def __init__(self):

@@ -1,4 +1,5 @@
 from time import sleep
+import json
 from fraction import Fraction
 from ecosystem import Ecosystem
 
@@ -10,19 +11,29 @@ class Game():
         self.decision_dict = decision_dict
 
         self.fraction = Fraction(init_year)
-        self.ecosystem = Ecosystem(0, init_year)
+        self.ecosystem = Ecosystem(0, init_year) 
     
-
 
     def play(self):
         for year in range(self.init_year, self.end_year):
-            # sleep(10)
+            with open('input.txt') as json_file:
+                data = json.load(json_file)
+                model = data['model']
             # print(year)
             # model = self.fraction.get_current_state()
-            self.ecosystem.perform_timestep(0, year)
-            self.ecosystem.update_co2()
-            print(self.ecosystem.current_CO2_concentration())
-            print('temp' ,self.ecosystem.temp_from_currentCO2())
+            temp = self.ecosystem.perform_timestep(model, year)
+
+            # self.ecosystem.update_co2()
+            # print(self.ecosystem.current_CO2_concentration())
+            # print('temp' ,self.ecosystem.temp_from_currentCO2())
+
+            data = {}
+            data['temp'] = temp
+            data['plot_temp'] = 'plot_temp.png'
+            with open('output.txt', 'w') as outfile:
+                json.dump(data, outfile)
+
+            sleep(10)
 
 
 decision_dict_1 = {'powerplant':'yes'}
