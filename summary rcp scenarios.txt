@@ -1,0 +1,12 @@
+summary on different scenarios how to reduce greenhouse gas emission (mitigation): 
+
+4 different scenarios named rcp ('representative concentration pathways') labeled with a number, indicating the resulting final power surface density of the radiation according to the scenario. 
+
+the smaller the number is, the more actions have been taken the reduce green house gas emission, and therefore global warming has been inhibited more strongly. possible actions are reforestation, or reducing human emissions. 
+
+each scenario runs between 2006 and 2100, and the radiation from earths surface leading to temperature change, peaks at the final year 2100.
+
+1. RCP 2.6 - radiation peaks with 2.6 W per square meter in 2100
+2. RCP 4.6
+3. RCP 6.0
+4. RCP 8.5 - no migitation actions are chosen, business as usual scenario of current human behaviour 
