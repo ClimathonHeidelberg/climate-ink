@@ -12,3 +12,9 @@ class Fraction():
 
     def get_budget(self):
         return 100
+
+    def get_current_state(self):
+
+        rcp_model = 1
+
+        return rcp_model

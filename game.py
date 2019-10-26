@@ -10,14 +10,16 @@ class Game():
         self.decision_dict = decision_dict
 
         self.fraction = Fraction(init_year)
-        self.ecosystem = Ecosystem()
+        self.ecosystem = Ecosystem(init_year, 0)
     
 
 
     def play(self):
         for year in range(self.init_year, self.end_year):
-            sleep(10)
+            # sleep(10)
             print(year)
+            # model = self.fraction.get_current_state()
+            # self.ecosystem.perform_timestep(0)
 
 
 decision_dict_1 = {'powerplant':'yes'}
@@ -27,3 +29,10 @@ init_year = 2019
 
 game = Game(init_year, decision_dict_1)
 game.play()
+
+
+# from scipy.io import netcdf
+
+# file = netcdf.netcdf_file('', 'r')
+
+# bla = file.variable['']
