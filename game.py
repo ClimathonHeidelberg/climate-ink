@@ -1,19 +1,23 @@
+from time import sleep
 from fraction import Fraction
+from ecosystem import Ecosystem
 
-class Game(init_year, decision_dict):
+class Game():
 
-    def __init__():
+    def __init__(self, init_year, decision_dict):
         self.init_year = init_year
         self.end_year = 2100
         self.decision_dict = decision_dict
 
         self.fraction = Fraction(init_year)
+        self.ecosystem = Ecosystem()
     
 
 
     def play(self):
         for year in range(self.init_year, self.end_year):
-            pass
+            sleep(10)
+            print(year)
 
 
 decision_dict_1 = {'powerplant':'yes'}
