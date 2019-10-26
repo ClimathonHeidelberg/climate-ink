@@ -1,6 +1,6 @@
 from time import sleep
 import json
-from fraction import Fraction
+from faction import Faction
 from ecosystem import Ecosystem
 
 class Game():
@@ -10,7 +10,7 @@ class Game():
         self.end_year = 2100
         self.decision_dict = decision_dict
 
-        self.fraction = Fraction(init_year)
+        self.fraction = Faction(init_year)
         self.ecosystem = Ecosystem(0, init_year) 
     
 
