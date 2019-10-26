@@ -17,4 +17,4 @@ class Fraction():
 
         rcp_model = 1
 
-        return rcp_model
+        return rcp_model 
