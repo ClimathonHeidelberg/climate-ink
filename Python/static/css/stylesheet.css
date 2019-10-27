@@ -1,58 +1,62 @@
-
-h1 {
-	color: red;
+body {
+	text-align: center;
+	background-color: #002868;
 }
 
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+#decision{
+	float:left;
+	position:relative;
+	width: 40%;
+	margin:5%;
+	height:50%;
+	background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+	z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+	cursor: pointer; /* Add a pointer on hover */}
+
+#social{
+	float:right;
+	position:relative;
+	width:40%;
+	height:50%;
+	margin:5%;
+	background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+	z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+	cursor: pointer; /* Add a pointer on hover */
 }
-#Actions {
+
+#action{
+	float:left;
+	position:relative;
+	display:none;
+	width: 40%;
+	margin:5%;
+	height:50%;
+	background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+	z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+	cursor: pointer;/* Add a pointer on hover */
+}
+
+#overlay{
+	position:fixed;
 	display: none;
+	background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }
 
-#actions_button {
-	font-size:40pt;
-	color: white;
-}
 
-#decision {
-  float: left;
-  width: 35em; /* Full width (cover the whole page) */
-  /*height: 100%; /* Full height (cover the whole page) */
-  background-color: white; /* Black background with opacity */
+#overlay{
+	position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 
-#social {
-  float: left;
-  width: 35em; /* Full width (cover the whole page) */
-  /*height: 100%; /* Full height (cover the whole page) */
-  background-color: white; /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
 
-#world {
-	width: 100%;
-}
 
-path:hover, circle:hover {
-  stroke: #83C419 !important;
-  stroke-width:2px;
-  stroke-linejoin: round;
-  fill: #83C419 !important;
-  cursor: pointer;
-}
-
-svg {
-    background: #002868;
-	float: left;
-	width:100%;
-}
