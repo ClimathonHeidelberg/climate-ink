@@ -80,7 +80,7 @@ class Ecosystem():
         plt.yticks(fontsize=14)
         ax.legend(fontsize=14)
         plt.title('mean surface temperature per year',fontsize=14)
-        fig.savefig('temp_plots.png')
+        fig.savefig('static/img/plot.png')
 
 
             # print(data[keys][1, year] - 273.15)
