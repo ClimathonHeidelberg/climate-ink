@@ -11,12 +11,23 @@
 </head>
 
 <body>
+
+  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <h1>Climate Inc.</h1>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
+	<div id="Budget" style="float:right">
+	<h1>Humanity</h1>
+	<p> Budget: <progress value = "65" max = "100"/> </p>
+	</div>
+	<div id="ClimateParameters" style="float:left"> 
+	<h1>Earth</h1>
+	<p font-size=120%> Temperature +2° <br> CO2 300ppm </p>
+	</div>
+  
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -106,6 +117,7 @@ svg {
 </svg>
 
 
+
  <div id="overlay">
 	<button id="close", style="position:fixed;"> X</button>
 			<script>
@@ -122,6 +134,7 @@ svg {
 			</script>
 			
 	<div id="decision">
+
 		<h1>Decisions</h1>
 	</div>
 	
@@ -131,11 +144,18 @@ svg {
 	
 	<div id="action" class="container">
 			<list id="actions_button">
-			 <form>
-			  <input type="radio" name="gender" value="male" checked> Model 1<br>
-			  <input type="radio" name="gender" value="female"> Model 2<br>
-			  <input type="radio" name="gender" value="other"> Model 3
-			</form> 
+			 <form action="{{ url_for('handle_data') }}" method="post">
+		        <p> <br>
+		        Phase out coal within the next <input type="text" name="exitYears"> years
+		        <input type="button" value="?" onclick="msg()"> 
+		        </p>
+		
+		        <p>
+		        Explode all cars? <input type="number" name="AreThereStillCars">
+		        </p>
+
+	        	<input value="Submit" type="submit" onclick="submitform()">
+    		</form> 
 			</list>
 			<button id="close1"> X</button>
 			<script>
