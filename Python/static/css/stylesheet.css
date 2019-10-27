@@ -1,13 +1,22 @@
 body {
 	text-align: center;
-	background-color: #002868;
+	background-color: #373737;
+	color: white;
+	font-family: myriad pro;
+	font-size: 24pt;
+	
 }
+
+
 
 #decision{
 	float:left;
 	position:relative;
 	width: 40%;
-	margin:5%;
+	margin-top:20%;
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:5%;
 	height:50%;
 	background-color: rgba(255,255,255,0.5); /* Black background with opacity */
 	z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
@@ -18,7 +27,10 @@ body {
 	position:relative;
 	width:40%;
 	height:50%;
-	margin:5%;
+	margin-top:20%;
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:5%;
 	background-color: rgba(255,255,255,0.5); /* Black background with opacity */
 	z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
 	cursor: pointer; /* Add a pointer on hover */
