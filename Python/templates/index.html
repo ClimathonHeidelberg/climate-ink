@@ -102,11 +102,18 @@
 	</div>
 	<div id="Actions" class="container">
 			<list id="actions_button">
-			 <form>
-			  <input type="radio" name="gender" value="male" checked> Model 1<br>
-			  <input type="radio" name="gender" value="female"> Model 2<br>
-			  <input type="radio" name="gender" value="other"> Model 3
-			</form> 
+			 <form action="{{ url_for('handle_data') }}" method="post">
+		        <p> <br>
+		        Phase out coal within the next <input type="text" name="exitYears"> years
+		        <input type="button" value="?" onclick="msg()"> 
+		        </p>
+		
+		        <p>
+		        Explode all cars? <input type="number" name="AreThereStillCars">
+		        </p>
+
+	        	<input value="Submit" type="submit" onclick="submitform()">
+    		</form> 
 			</list>
 			<button id="close1"> X</button>
 			<script>
