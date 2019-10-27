@@ -1,6 +1,7 @@
 # import cdsapi
 # import cdstoolbox as ct
 import numpy as np
+import h5py as h5
 
 class Ecosystem():
     def __init__(self, model, year):
@@ -10,6 +11,7 @@ class Ecosystem():
         # self.client = cdsapi.Client()
         self.dict_temp = {'2019': 1.0, '2020': 1.1, '2021':1.2, '2022':1.2, '2023':1.3, '2024':1.5, '2025':1.6, '2026':1.9}
         self.co2_concentration = self.init_CO2_concentration()
+        self.path = 'data.h5'
 
     def get_cds_data(self):
         if self.model == 0:
@@ -37,6 +39,18 @@ class Ecosystem():
         #per year
         self.co2_concentration += faction_emission
         print(self.co2_concentration, 'co2 concentration')
+
+    def get_copernicus_data(self, first_year, year):
+        data = h5.File(self.path, 'r')
+        year = year - 2006
+        for keys in data:
+            if year == first_year:
+                diff = 0
+            else:
+                diff = data[keys][1, year] - data[keys][1, year-1]
+            print(diff)
+
+            # print(data[keys][1, year] - 273.15)
 
 
 class Catastrophy():

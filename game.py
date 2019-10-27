@@ -5,10 +5,9 @@ from ecosystem import Ecosystem
 
 class Game():
 
-    def __init__(self, init_year, decision_dict):
+    def __init__(self, init_year):
         self.init_year = init_year
         self.end_year = 2080
-        self.decision_dict = decision_dict
 
         self.faction = Faction(init_year)
         self.ecosystem = Ecosystem(0, init_year) 
@@ -28,7 +27,7 @@ class Game():
             # self.ecosystem.update_co2()
             # print(self.ecosystem.current_CO2_concentration())
             # print('temp' ,self.ecosystem.temp_from_currentCO2())
-            
+
             self.faction.compute_velocity()
             faction_emission = self.faction.compute_additional_co2_emission()
             self.ecosystem.update_co2(faction_emission)
@@ -37,6 +36,8 @@ class Game():
             if year == 2023:
                 self.faction.update_co2_acc('Kohlekraft', 3)
                 self.faction.update_co2_acc('Traffic', 10)
+
+            self.ecosystem.get_copernicus_data(self.init_year ,year)
 
             # data = {}
             # data['temp'] = temp
@@ -47,17 +48,7 @@ class Game():
             # sleep(10)
 
 
-decision_dict_1 = {'powerplant':'yes'}
-decision_dict_2 = {'powerplant':'no'}
 init_year = 2019
 
-
-game = Game(init_year, decision_dict_1)
+game = Game(init_year)
 game.play()
-
-
-# from scipy.io import netcdf
-
-# file = netcdf.netcdf_file('', 'r')
-
-# bla = file.variable['']
