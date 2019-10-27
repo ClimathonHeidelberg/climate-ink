@@ -41,7 +41,7 @@
    version="1.1"
    inkscape:version="0.47 r22583"
    sodipodi:docname="Neues Dokument 1">
-
+	
   <defs
      id="defs4">
     <inkscape:perspective
@@ -71,6 +71,7 @@ svg {
 	background-size: 50%;
 	width: 100%;
 	height: 100%;
+	box-shadow: inset 10px 0 px 10px
 }
 </style>
   </defs>
@@ -217,6 +218,43 @@ $('#start').click(function () {
 
 });
 }); </script>
+
+<button id="plot">Plot </button>
+
+<div id="plot_div" style="display:none; z-index=4; position:fixed; width=100%; height=100%; top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;">
+	<img src="/static/img/plot.png">
+		<button id="close_plot" style="float:right;"> X</button>
+</div>
+<script>
+$('#plot').click(function () {
+	$.ajax({
+		type: 'GET',
+		url: '/index/',
+		success: function (response) {
+			$('#plot_div').show();
+			$('#close_plot').show();
+			$('#plot').hide();
+		}
+	
+	});
+});
+
+$('#close_plot').click(function () {
+					$.ajax({
+						type: 'GET',
+						url: '/index/',
+						success: function (response) {
+							$('#plot_div').hide();
+							$('#close_plot').hide();
+							$('#plot').show();
+						}
+					
+					});
+				});
+</script>
 </body>
 
 </body>

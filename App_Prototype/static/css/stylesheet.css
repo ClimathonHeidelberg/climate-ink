@@ -3,10 +3,17 @@ body {
 	background-color: #373737;
 	color: white;
 	font-family: myriad pro;
-	font-size: 24pt;
-	
+	font-size: 20pt;
 }
 
+#Budget {
+	margin-top:-4em;
+}
+
+#ClimateParameters {
+	margin-top:-5em;
+	margin-left: 1em;
+}
 
 
 #decision{

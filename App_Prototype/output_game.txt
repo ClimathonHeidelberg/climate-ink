@@ -1,0 +1,1 @@
+{"temp": 14.145, "year": 2018, "co2": 331.124, "plot_temp": "plot_temp.png"}
