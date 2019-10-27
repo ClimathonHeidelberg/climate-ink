@@ -36,7 +36,7 @@ class Game():
             self.faction.compute_velocity()
             faction_emission = self.faction.compute_additional_co2_emission()
             T1 = self.ecosystem.temp_from_currentCO2()
-            self.ecosystem.update_co2(faction_emission)
+            co2_emission = self.ecosystem.update_co2(faction_emission)
             self.faction.compute_velocity()
             T2 = self.ecosystem.temp_from_currentCO2()
             print('tem', self.ecosystem.temp_from_currentCO2())
@@ -66,6 +66,7 @@ class Game():
             data = {}
             data['temp'] = temp
             data['year'] = year
+            data['co2'] = co2_emission
             data['plot_temp'] = 'plot_temp.png'
             with open('output_game.txt', 'w') as outfile:
                 json.dump(data, outfile)

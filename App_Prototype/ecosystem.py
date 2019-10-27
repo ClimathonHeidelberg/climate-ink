@@ -39,7 +39,7 @@ class Ecosystem():
     def update_co2(self, faction_emission):
         #per year
         self.co2_concentration += faction_emission
-        print(self.co2_concentration, 'co2 concentration')
+        return self.co2_concentration
 
 
     def compare_copernicus_data(self, first_year,end_year, year,temp_diff, temperatures):

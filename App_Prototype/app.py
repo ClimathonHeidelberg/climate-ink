@@ -8,6 +8,7 @@ app = Flask(__name__)
 data = {}
 data['temp'] = 14.145
 data['year'] = 2018
+data['co2'] = 331.124
 data['plot_temp'] = 'plot_temp.png'
 with open('output_game.txt', 'w') as outfile:
     json.dump(data, outfile)
@@ -18,7 +19,8 @@ def hello_world():
         data = json.load(json_file)
         temperature = np.round(data['temp'], 3)
         year = data['year']
-    context = {'temp': temperature, 'year': year}
+        co2_emission = np.round(data['co2'],3)
+    context = {'temp': temperature, 'year': year, 'co2':co2_emission}
     return render_template('index.html', variable=context)
     #return '<h1>Climate Inc. Version {}</h1>'.format(version)
 
