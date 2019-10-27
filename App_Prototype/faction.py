@@ -46,11 +46,11 @@ class Faction():
 
     def init_CO2_vel(self):
         years_diff = int(self.year) - 1970
-        return 3.41*(years_diff/10)**(1.3)
+        return 3.41/10*(years_diff/10)**(1.3)
 
     def init_CO2_acc(self):
         years_diff = int(self.year) - 1970
-        return 3.41*1.3*(years_diff/10)**0.3
+        return 3.41*1.3/100*(years_diff/10)**0.3
 
     def update_co2_acc(self, name, user_input):
         self.output_generator[name][1] = - self.output_generator[name][0] / user_input

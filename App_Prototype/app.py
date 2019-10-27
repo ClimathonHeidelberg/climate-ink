@@ -6,8 +6,8 @@ import numpy as np
 app = Flask(__name__)
 
 data = {}
-data['temp'] = 0.6
-data['year'] = 2019
+data['temp'] = 14.145
+data['year'] = 2018
 data['plot_temp'] = 'plot_temp.png'
 with open('output_game.txt', 'w') as outfile:
     json.dump(data, outfile)
@@ -21,6 +21,7 @@ def hello_world():
     context = {'temp': temperature, 'year': year}
     return render_template('index.html', variable=context)
     #return '<h1>Climate Inc. Version {}</h1>'.format(version)
+
 @app.route('/index/urmomgay/', methods=['GET', 'POST'])
 def hoi():
     return '<h1> urmomgay </h1>'

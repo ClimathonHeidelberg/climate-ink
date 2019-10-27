@@ -35,9 +35,15 @@ class Game():
 
             self.faction.compute_velocity()
             faction_emission = self.faction.compute_additional_co2_emission()
+            T1 = self.ecosystem.temp_from_currentCO2()
             self.ecosystem.update_co2(faction_emission)
+            self.faction.compute_velocity()
+            T2 = self.ecosystem.temp_from_currentCO2()
             print('tem', self.ecosystem.temp_from_currentCO2())
             temp = self.ecosystem.temp_from_currentCO2()
+            self.templist.append(temp)
+
+            self.ecosystem.compare_copernicus_data(self.init_year ,self.end_year, year, T2 - T1, self.templist)
 
             if coal_year is not None and traffic_year is not None:
                 print(coal_year)
@@ -52,9 +58,9 @@ class Game():
                     json.dump(data,outfile)
 
             # self.ecosystem.get_copernicus_data(self.init_year ,year)
-            self.templist.append(temp)
-            plt.plot(self.templist)
-            plt.savefig('plot_temp.png')
+        
+            # plt.plot(self.templist)
+            # plt.savefig('temp.png')
             # plt.show()
 
             data = {}
