@@ -12,6 +12,13 @@ def hello_world():
 def hoi():
     return '<h1> urmomgay </h1>'
 
+@app.route('/start')
+def startGame():
+    data={}
+    data['coal']= None
+    data['traffic']= None
+    
+
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
     years = request.form.get('exitYears')
